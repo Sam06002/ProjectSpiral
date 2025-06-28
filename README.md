@@ -1,46 +1,134 @@
-# Getting Started with Create React App
+# Attendance Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive, and user-friendly web application for managing attendance in educational institutions. Built with React, TypeScript, and Material-UI.
 
-## Available Scripts
+![Dashboard Preview](https://via.placeholder.com/800x400.png?text=Attendance+Management+System+Dashboard)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### 👨‍🎓 Student Portal
+- View attendance records and statistics
+- Filter attendance by date range and subject
+- Download attendance reports in PDF/Excel
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 👩‍🏫 Teacher Portal
+- Mark student attendance
+- View class-wise attendance statistics
+- Generate and export attendance reports
+- Manage class schedules
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 👨‍💼 Admin Portal
+- User management (add, edit, delete users)
+- System-wide analytics and dashboards
+- Class and subject management
+- Role-based access control
 
-### `npm test`
+## 🛠️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**: React 18, TypeScript, Material-UI
+- **State Management**: React Context API
+- **Routing**: React Router v6
+- **Form Handling**: React Hook Form with Yup validation
+- **HTTP Client**: Axios
+- **Charts**: Nivo
+- **Build Tool**: Vite
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (v16 or later)
+- npm (v8 or later) or yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Sam06002/ProjectSpiral.git
+   cd ProjectSpiral
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. **Open in browser**
+   The application will be available at [http://localhost:3000](http://localhost:3000)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 📦 Project Structure
 
-## Learn More
+```
+src/
+├── components/         # Reusable UI components
+├── contexts/           # React contexts
+├── hooks/              # Custom React hooks
+├── layouts/            # Page layouts
+├── pages/              # Application pages
+│   ├── admin/         # Admin portal pages
+│   ├── auth/          # Authentication pages
+│   ├── student/       # Student portal pages
+│   └── teacher/       # Teacher portal pages
+├── services/          # API services
+├── types/             # TypeScript type definitions
+├── utils/             # Utility functions
+└── App.tsx            # Main application component
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔒 Default Login Credentials
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Admin**:
+  - Username: admin@example.com
+  - Password: admin123
+
+- **Teacher**:
+  - Username: teacher@example.com
+  - Password: teacher123
+
+- **Student**:
+  - Username: student@example.com
+  - Password: student123
+
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Create React App](https://create-react-app.dev/)
+- [Material-UI](https://mui.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Nivo](https://nivo.rocks/)
+
+---
+
+<div align="center">
+  Made with ❤️ by Project Spiral Team
+</div>
