@@ -1,4 +1,12 @@
-import axios from 'axios';
+import axios, { AxiosRequestConfig, AxiosResponse, AxiosError, InternalAxiosRequestConfig } from 'axios';
+
+// Extend the AxiosRequestConfig interface to include custom headers
+interface CustomAxiosRequestConfig extends AxiosRequestConfig {
+  headers?: {
+    Authorization?: string;
+    [key: string]: any;
+  };
+}
 
 // Create axios instance with base URL and headers
 const api = axios.create({
@@ -10,22 +18,22 @@ const api = axios.create({
 
 // Add a request interceptor to add the auth token to requests
 api.interceptors.request.use(
-  (config) => {
+  (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
     const token = localStorage.getItem('token');
-    if (token) {
+    if (token && config.headers) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  (error) => {
+  (error: AxiosError): Promise<never> => {
     return Promise.reject(error);
   }
 );
 
 // Add a response interceptor to handle common errors
 api.interceptors.response.use(
-  (response) => response,
-  (error) => {
+  (response: AxiosResponse): AxiosResponse => response,
+  (error: AxiosError): Promise<never> => {
     if (error.response) {
       // Handle different HTTP status codes
       const { status } = error.response;
@@ -40,7 +48,7 @@ api.interceptors.response.use(
       } else if (status === 404) {
         // Handle not found
         console.error('Resource not found');
-      } else if (status >= 500) {
+      } else if (status && status >= 500) {
         // Handle server errors
         console.error('Server error occurred');
       }
@@ -49,9 +57,8 @@ api.interceptors.response.use(
       console.error('No response received from server');
     } else {
       // Something happened in setting up the request
-      console.error('Error setting up the request:', error.message);
+      console.error('Error setting up request:', error.message);
     }
-    
     return Promise.reject(error);
   }
 );
